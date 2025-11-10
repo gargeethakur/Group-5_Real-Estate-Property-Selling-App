@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    app:cardElevation="0dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person_black"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileIv"
+            android:maxLines="1"
+            android:text="User Name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lastMessageTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTv"
+            android:layout_toEndOf="@id/profileIv"
+            android:maxLines="1"
+            android:text="Last message in this chat..."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/nameTv"
+            android:text="10:00 AM"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

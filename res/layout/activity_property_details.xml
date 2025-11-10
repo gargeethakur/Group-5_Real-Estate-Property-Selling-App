@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PropertyDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar_bg01">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_white"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/toolbarAssetIV"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_buildings"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Details"
+            android:layout_toEndOf="@id/toolbarBackBtn"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/toolbarFavBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fav_no_black"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/toolbarEditBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_black"
+            android:layout_toStartOf="@id/toolbarFavBtn"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            app:tint="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/toolbarDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete_black"
+            android:layout_toStartOf="@id/toolbarEditBtn"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            app:tint="@color/white"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRL"
+        android:layout_above="@id/optionsLL">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/imageSliderVP"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/soldCv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="?attr/colorPrimaryDark"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="5dp"
+                app:strokeWidth="0dp"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Circle">
+
+                <TextView
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sold"
+                    android:paddingHorizontal="4dp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnPrimary"/>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/priceSymbolTV"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price_symbol"
+                android:layout_below="@id/imageSliderVP"
+                android:layout_marginEnd="2dp"/>
+
+            <TextView
+                android:id="@+id/priceTv"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="12,500"
+                android:layout_toEndOf="@id/priceSymbolTV"
+                android:layout_below="@id/imageSliderVP"
+                android:layout_marginEnd="2dp"/>
+
+            <TextView
+                android:id="@+id/dateTv"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@tools:sample/date/ddmmyy"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/imageSliderVP"
+                android:layout_marginEnd="2dp"/>
+
+            <TextView
+                android:id="@+id/purposeLabelTV"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purpose"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/priceSymbolTV"/>
+
+            <TextView
+                android:id="@+id/purposeTV"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/purposeLabelTV"
+                tools:text="@tools:sample/lorem[1]"/>
+
+            <TextView
+                android:id="@+id/categoryLabelTV"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/purposeTV"/>
+
+            <TextView
+                android:id="@+id/categoryTv"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoryLabelTV"
+                tools:text="@tools:sample/lorem[1]"/>
+
+            <TextView
+                android:id="@+id/subcategoryLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subcategory"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/categoryTv"/>
+
+            <TextView
+                android:id="@+id/subcategoryTv"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subcategoryLabelTv"
+                tools:text="@tools:sample/lorem[1]"/>
+
+            <TextView
+                android:id="@+id/specificationsLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specifications"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/subcategoryTv"/>
+
+            <LinearLayout
+                android:id="@+id/moreInfoLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/specificationsLabelTv"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/floorsTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Floors: 6"
+                    android:drawableTop="@drawable/building_gray"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/bedsTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Beds: 6"
+                    android:drawableTop="@drawable/bed_gray"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/bathroomsTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Bathrooms: 6"
+                    android:drawableTop="@drawable/bathtub_gray"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/areaSizeTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Area Size: 6"
+                    android:drawableTop="@drawable/area_size_gray"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/titleLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/moreInfoLL"/>
+
+            <TextView
+                android:id="@+id/titleTv"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleLabelTv"
+                tools:text="@tools:sample/lorem[1]"/>
+
+            <TextView
+                android:id="@+id/descriptionLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/titleTv"/>
+
+            <TextView
+                android:id="@+id/descriptionTv"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionLabelTv"
+                tools:text="@tools:sample/lorem[11]"/>
+
+            <TextView
+                android:id="@+id/addressLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/descriptionTv"/>
+
+            <TextView
+                android:id="@+id/addressTv"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressLabelTv"
+                tools:text="@tools:sample/lorem[10]"/>
+
+            <TextView
+                android:id="@+id/sellerProfileLabelTv"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seller Info"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/addressTv"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sellerProfileCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sellerProfileLabelTv"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/sellerProfileIV"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/colorGray01"
+                        tools:src="@tools:sample/avatars"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:id="@+id/sellerNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/sellerProfileIV"
+                        android:layout_centerVertical="true"
+                        tools:text="John Doe"/>
+
+                    <TextView
+                        android:id="@+id/memberSinceLabelTv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@tools:sample/full_names"
+                        android:layout_toEndOf="@id/sellerProfileIV"
+                        android:layout_below="@id/sellerNameTv"/>
+
+                    <TextView
+                        android:id="@+id/memberSinceTv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@tools:sample/date/ddmmyy"
+                        android:layout_toEndOf="@+id/memberSinceLabelTv"
+                        android:layout_below="@+id/sellerNameTv" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/next_gray"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/optionsLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="2dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/chatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Chat"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/chat_black"
+            app:iconGravity="top" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/callBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Call"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/call_black"
+            app:iconGravity="top" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/smsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="SMS"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/chat_black"
+            app:iconGravity="top" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mapBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Map"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/location_gray"
+            app:iconGravity="top" />
+
+    </LinearLayout>
+</RelativeLayout>

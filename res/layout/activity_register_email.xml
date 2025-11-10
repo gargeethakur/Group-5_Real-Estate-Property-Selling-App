@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register_Email">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/toolbar_bg02">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_white"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:tint="?attr/colorPrimary"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/person_black"
+            android:layout_centerHorizontal="true"
+            android:background="?attr/colorOnPrimary"
+            android:layout_marginVertical="15dp"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"/>
+
+        <TextView
+            android:id="@+id/registerLabelTv"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a New Account"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_below="@id/profileIv"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRL"
+        android:padding="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/emailTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Email"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:startIconDrawable="@drawable/email_black">
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Password"
+            app:passwordToggleEnabled="true"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:layout_below="@+id/emailTil"
+            app:startIconDrawable="@drawable/lock_white">
+
+            <EditText
+                android:id="@+id/passwordEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cPasswordTil"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="Confirm Password"
+            app:passwordToggleEnabled="true"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:layout_below="@+id/passwordTil"
+            app:startIconDrawable="@drawable/lock_white">
+
+            <EditText
+                android:id="@+id/cPasswordEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/haveAccountTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cPasswordTil"
+            android:text="@string/have_account_login"
+            android:layout_marginTop="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Register"
+            app:icon="@drawable/key_white"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

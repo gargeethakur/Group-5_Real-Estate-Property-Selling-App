@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="50dp"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/messageTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/chat_bubble_right"
+        android:padding="10dp"
+        android:text="That's great! What specifically would you like to know?"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/timeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageTv"
+        android:layout_alignEnd="@id/messageTv"
+        android:text="10:06 AM"
+        android:textColor="@color/colorGray02"
+        android:textSize="12sp" />
+
+</RelativeLayout>

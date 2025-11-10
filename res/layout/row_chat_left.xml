@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="50dp"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/messageTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_bubble_black"
+        android:padding="10dp"
+        android:text="Hi, I'm interested in the property you posted."
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/timeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageTv"
+        android:layout_alignStart="@id/messageTv"
+        android:text="10:05 AM"
+        android:textColor="@color/colorGray02"
+        android:textSize="12sp" />
+
+</RelativeLayout>
